@@ -14,3 +14,9 @@ Simple Grails 3.0 proof of concept RESTful api.
 
 ## Testing
 * `grails test-app`
+
+## Building
+* `gradle build`
+
+## Deploying
+* `gradle war`
