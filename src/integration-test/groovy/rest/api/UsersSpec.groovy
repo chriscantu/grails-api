@@ -14,12 +14,13 @@ import grails.plugins.rest.client.RestBuilder
 @Rollback
 class UsersSpec extends GebSpec {
     @Shared
-    private def uri = "http://localhost:8080/users"
-
-    @Shared
     private def client = new RestBuilder()
 
+    @Shared
+    def uri
+
     def setup() {
+      uri = "${baseUrl}/users"
     }
 
     def cleanup() {
@@ -27,9 +28,13 @@ class UsersSpec extends GebSpec {
 
     void "GET: Users"() {
         when:
+            println "Hello"
+            println uri
             def resp = client.get(uri)
         then:
             resp.status == 200
+            resp.json.total == 0
+            resp.json.list == []
 
     }
 }

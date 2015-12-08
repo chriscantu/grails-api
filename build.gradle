@@ -9,6 +9,7 @@ buildscript {
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate:4.3.10.5"
+        classpath "org.grails:grails-gradle-plugin:2.1.2"
     }
 }
 
@@ -67,7 +68,8 @@ dependencies {
     testCompile "org.grails:grails-plugin-testing"
     testCompile "org.grails.plugins:geb"
     testCompile 'org.grails:grails-datastore-rest-client:5.0.0.RC2'
-
+    compile "org.codehaus.geb:geb-core:latest.release",
+    "org.seleniumhq.selenium:selenium-htmlunit-driver:latest.release"
     console "org.grails:grails-console"
 }
 

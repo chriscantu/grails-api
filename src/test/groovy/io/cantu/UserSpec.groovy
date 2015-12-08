@@ -10,13 +10,14 @@ import spock.lang.Specification
 class UserSpec extends Specification {
 
     def setup() {
+      new User(firstName: 'Chris', lastName: 'Cantu').save()
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "Users should exist"() {
+        expect:"Some users to exist"
+            User.list().size() == 1
     }
 }
