@@ -28,8 +28,6 @@ class UsersSpec extends GebSpec {
 
     void "GET: Users"() {
         when:
-            println "Hello"
-            println uri
             def resp = client.get(uri)
         then:
             resp.status == 200
