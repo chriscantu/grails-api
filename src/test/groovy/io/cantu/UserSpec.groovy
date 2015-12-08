@@ -20,4 +20,12 @@ class UserSpec extends Specification {
         expect:"Some users to exist"
             User.list().size() == 1
     }
+
+    void "Users should have properties"() {
+        when: "User exists"
+           def user = User.first()
+        then: "User should have first & lastName"
+           user.firstName != null
+           user.lastName != null
+    }
 }
